@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function Button({ title, href, onClick }) {
+        let Component = "button";
+        const props = {
+          style: {
+            padding: "10px 20px",
+            fontSize: "16px",
+            textDecoration: "none",
+            backgroundColor: "gray",
+            color: "#fff",
+            border: "none",
+          },
+        };
+        if (href) {
+          Component = "a";
+          props.href = href;
+          props.target = "_blank";
+        }
+
+        if (onClick) {
+          props.onClick = onClick;
+        }
+        console.log(props);
+
+        return <Component {...props}>{title}</Component>;
+      }
+      // App.js
+      function App() {
+        return (
+          <div id="wrapper">
+            <Button
+              title="Click Me"
+              href="https://www.example.com"
+              onClick={() => console.log("Button clicked!")}
+            />
+          </div>
+        );
+      }
+
+      // index.js
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
