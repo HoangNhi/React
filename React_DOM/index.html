@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script>
+      //   const divReact = React.createElement(
+      //     "div",
+      //     { className: "post-item" },
+      //     React.createElement("h2", { title: "Hoc React" }, "Hello World"),
+      //     React.createElement(
+      //       "p",
+      //       null,
+      //       "This is a simple React component rendered using React.createElement."
+      //     )
+      //   );
+
+      // 5.
+      const divReact = React.createElement(
+        "div",
+        { title: "hello", className: "heading" },
+        "Hello guys!"
+      );
+
+      // 6.
+      const ulReact = React.createElement(
+        "ul",
+        null,
+        React.createElement("li", null, "Item 1"),
+        React.createElement("li", null, "Item 2")
+      );
+
+      // Get root element
+      const rootElement = document.getElementById("root");
+
+      // React-DOM render
+      ReactDOM.render(divReact, rootElement);
+      ReactDOM.render(ulReact, rootElement);
+    </script>
+  </body>
+</html>

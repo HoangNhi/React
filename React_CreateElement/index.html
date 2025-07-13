@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+</head>
+<body>
+    <script>
+        var h1DOM = document.createElement('h1');
+        h1DOM.title = 'Hello';
+        h1DOM.className = 'heading';
+        h1DOM.textContent = 'Hello, guys!';
+
+        document.body.appendChild(h1DOM);
+
+        // React
+        const h1React = React.createElement('h1', {
+            title: 'Hello',
+            className: 'heading',
+        }, 'Hello, guys!');
+
+        var ulDOM = document.createElement('ul');
+        ['Javascript', 'ReactJS'].forEach(function (item) {
+            var liDOM = document.createElement('li');
+            liDOM.textContent = item;
+            ulDOM.appendChild(liDOM);
+        });
+
+        document.body.appendChild(ulDOM);
+
+        const divDOM = document.createElement('div');
+        divDOM.className = 'post-item';
+
+        const h2DOM = document.createElement('h2');
+        h2DOM.title= 'Post Title';
+        h2DOM.textContent = 'Post Title';
+        divDOM.appendChild(h2DOM);
+        const p = document.createElement('p');
+        p.textContent = 'Post content goes here.';
+        divDOM.appendChild(p);
+        document.body.appendChild(divDOM);
+
+        // React
+        const ulReact = React.createElement('ul', null,
+            React.createElement('li', null, 'Javascript'),
+            React.createElement('li', null, 'ReactJS')
+        );
+
+        const divReact = React.createElement('div', { className: 'post-item' },
+            React.createElement('h2', { title: 'Post Title' }, 'Post Title'),
+            React.createElement('p', null, 'Post content goes here.')
+        );
+    </script>
+</body>
+</html>
