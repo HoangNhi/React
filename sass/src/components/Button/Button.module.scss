@@ -1,0 +1,21 @@
+.btn{
+    padding: 4px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    &:hover {
+        background-color: darken(#007bff, 10%);
+        cursor: pointer;
+    }
+
+    &.disabled {
+        background-color: #f0f0f0;
+        color: #999;
+        cursor: not-allowed;
+    }
+}
+
+.primary{
+    background-color: blue;
+    color: white;
+}
